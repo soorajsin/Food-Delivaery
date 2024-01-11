@@ -1,0 +1,45 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.nav {
+          margin: auto;
+          width: 1200px;
+          /* background-color: red; */
+          height: 67px;
+}
+
+.nav .navContainer {
+          display: flex;
+          justify-content: space-between;
+}
+
+.nav .navContainer .tab {
+          margin-top: 10px;
+          font-size: 30px;
+}
+
+.nav .navContainer .tab .tabNavLink {
+          text-decoration: none;
+          color: #fff;
+          cursor: pointer;
+          transition: 0.3s ease;
+}
+
+.nav .navContainer .tab .tabNavLink:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+}
+
+.nav .navContainer .tab .tabNavLink img {
+          width: 67px;
+          height: 57px;
+}
+
+.nav .navContainer .tab .tabNavLink .avatarIcon {
+          background-color: #fff;
+          color: rgb(190, 54, 54);
+          font-size: 30px;
+          cursor: pointer;
+}

@@ -1,0 +1,77 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.register {
+          margin: 100px auto;
+          width: 1200px;
+}
+
+.register .registerContainer {
+          margin: auto;
+          width: 600px;
+          background-color: #fff;
+          padding: 30px;
+          transition: 0.3s ease;
+          border-radius: 10px;
+}
+
+
+.register .registerContainer:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+.register .registerContainer .form {
+          margin-bottom: 30px;
+          margin-left: 80px;
+          cursor: pointer;
+}
+
+.register .registerContainer .form h1 {
+          font-size: 30px;
+          word-spacing: 60px;
+          transition: 0.3s ease;
+}
+
+.register .registerContainer .form h1:hover {
+          color: rgb(202, 74, 74);
+          /* margin-left: 10px; */
+}
+
+.register .registerContainer .form label {
+          font-size: 30px;
+}
+
+.register .registerContainer .form input {
+          width: 405px;
+          background-color: #f5f5f5;
+          border-radius: 10px;
+          height: 40px;
+          padding-left: 10px;
+          border-top: none;
+          font-size: 30px;
+          cursor: pointer;
+}
+
+.register .registerContainer .form button {
+          width: 410px;
+          height: 40px;
+          border-radius: 10px;
+          background-color: #1976d2;
+          border: none;
+          font-size: 30px;
+          transition: 0.3s ease;
+}
+
+.register .registerContainer .form button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+          color: #fff;
+}
+
+.register .registerContainer .form p {
+          font-size: 20px;
+          cursor: pointer;
+}
