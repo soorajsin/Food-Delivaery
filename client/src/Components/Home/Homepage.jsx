@@ -7,13 +7,13 @@ const Homepage = () => {
   const [selectedFood, setSelectedFood] = useState([]);
 
   const handleAddToOrder = () => {
-    if (selectedFood) {
+    if (selectedFood.length > 0) {
       // Assuming the user data structure has an "order" field
       const updatedUserData = {
         ...userData,
         getData: {
           ...userData.getData,
-          order: [...(userData.getData.order || []), selectedFood],
+          order: [...(userData.getData.order || []), ...selectedFood],
         },
       };
 
@@ -37,7 +37,14 @@ const Homepage = () => {
                   <h4>{addFood.fprice} Rs</h4>
                   <p>{addFood.description}</p>
                   <div className="addcustomer">
-                    <button onClick={() => setSelectedFood(addFood)}>
+                    <button
+                      onClick={() =>
+                        setSelectedFood((prevSelectedFoods) => [
+                          ...prevSelectedFoods,
+                          addFood,
+                        ])
+                      }
+                    >
                       ADD
                     </button>
                   </div>
@@ -55,11 +62,15 @@ const Homepage = () => {
                   <p>{orderItem.fprice} Rs</p>
                 </div>
               ))}
-            {selectedFood && (
-              <div className="order-item">
-                <img src={selectedFood.fimg} alt="img" />
-                <h3>{selectedFood.fname}</h3>
-                <h4>{selectedFood.fprice} Rs</h4>
+            {selectedFood.length > 0 && (
+              <div className="order-item2">
+                {selectedFood.map((selectedFood, index) => (
+                  <div key={index} className="order-item">
+                    <img src={selectedFood.fimg} alt="img" />
+                    <h3>{selectedFood.fname}</h3>
+                    <h4>{selectedFood.fprice} Rs</h4>
+                  </div>
+                ))}
               </div>
             )}
             <button onClick={handleAddToOrder}>Place Order</button>
