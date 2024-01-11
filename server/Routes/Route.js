@@ -139,6 +139,96 @@ router.get("/validator", authentication, async (req, res) => {
 })
 
 
+router.post("/addFood", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+                    const {
+                              editFood
+                    } = req.body;
+
+                    if (!editFood) {
+                              res.status(400).json({
+                                        error: "Please provide the food data to add."
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(400).json({
+                                                  error: "You are not authorized for this action!"
+                                        })
+                              } else {
+                                        // console.log(user);
+
+                                        user.addFood.push(...editFood);
+
+                                        const updatedUser = await user.save();
+
+                                        res.status(201).json({
+                                                  msg: "Added succesfully done",
+                                                  status: 203,
+                                                  data: updatedUser
+                                        })
+                              }
+                    }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "Not added food"
+                    })
+          }
+})
+
+
+router.delete("/deleteFood", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+                    const {
+                              addFoodId
+                    } = req.body;
+
+                    if (!addFoodId) {
+                              res.status(400).json({
+                                        error: "Please provide valid id of the item you want to delete."
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(400).json({
+                                                  error: "Invalid token or You have no authorization to perform this operation."
+                                        })
+                              } else {
+                                        // console.log(user);
+
+                                        const entryField = user.addFood.find((addFood) => addFood._id.toString() === addFoodId);
+
+                                        if (!entryField) {
+                                                  res.status(400).json({
+                                                            error: "You can not remove this field from your diet plan.",
+                                                  })
+                                        } else {
+                                                  // console.log(entryField);
+
+                                                  user.addFood = user.addFood.filter((addFood) => addFood._id.toString() !== addFoodId);
+
+                                                  const updatedUser = await user.save();
+
+                                                  res.status(201).json({
+                                                            msg: "Delete data successfully done",
+                                                            status: 203,
+                                                            data: updatedUser
+                                                  })
+                                        }
+                              }
+                    }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "Delete failed! Please try again later."
+                    })
+          }
+})
+
+
 
 
 module.exports = router;

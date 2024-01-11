@@ -5,6 +5,8 @@ import Register from "./Components/Account/Register";
 import Nav from "./Components/Navbar/Nav";
 import Staffpage from "./Components/Staff/Staffpage";
 import Homepage from "./Components/Home/Homepage";
+import FoodAdd from "./Components/Staff/ADD/FoodAdd";
+import FoodUpdate from "./Components/Staff/Update/FoodUpdate";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/staff" element={<Staffpage />} />
           <Route path="/home" element={<Homepage />} />
+          <Route path="/addFood" element={<FoodAdd />} />
+          <Route path="/updateFood" element={<FoodUpdate />} />
         </Routes>
       </BrowserRouter>
     </>

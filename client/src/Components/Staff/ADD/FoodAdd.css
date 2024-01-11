@@ -1,0 +1,85 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.food {
+          width: 1200px;
+          margin: 100px auto;
+}
+
+.food .foodContainer {
+          width: 600px;
+          margin: auto;
+          background-color: #fff;
+          border-radius: 10px;
+          padding: 30px;
+          transition: 0.3s ease;
+}
+
+.food .foodContainer:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+.food .foodContainer .formFood {
+          margin-bottom: 30px;
+          margin-left: 70px;
+}
+
+.food .foodContainer .formFood h1 {
+          word-spacing: 30px;
+          cursor: pointer;
+}
+
+.food .foodContainer .formFood h1:hover {
+          transform: scale(1.02);
+          text-shadow: 0 0 10px;
+          color: rgb(160, 63, 63);
+}
+
+.food .foodContainer .formFood label {
+          font-size: 30px;
+}
+
+.food .foodContainer .formFood input {
+          font-size: 30px;
+          border-radius: 10px;
+          padding-left: 10px;
+          height: 40px;
+          width: 420px;
+          border-top: none;
+          background-color: #f5f5f5;
+}
+
+.food .foodContainer .formFood textarea {
+          font-size: 30px;
+          border-radius: 10px;
+          padding-left: 10px;
+          width: 420px;
+          border-top: none;
+          background-color: #f5f5f5;
+}
+
+.food .foodContainer .formFood button {
+          font-size: 30px;
+          border-radius: 10px;
+          padding-left: 10px;
+          height: 40px;
+          width: 425px;
+          border: none;
+          background-color: #52b1fe;
+          cursor: pointer;
+          color: #fff;
+          transition: 0.3s ease;
+}
+
+.food .foodContainer .formFood button:hover {
+          background-color: #2571b8;
+          transform: scale(1.03);
+          box-shadow: 0 0 10px;
+}
+
+.food .foodContainer .formFood p{
+          font-size: 20px;
+}
