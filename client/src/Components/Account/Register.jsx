@@ -11,12 +11,20 @@ const Register = () => {
     email: "",
     password: "",
     cpassword: "",
+    role: "customer",
   });
 
   const changeData = (e) => {
     setSendData({ ...sendData, [e.target.name]: e.target.value });
   };
   console.log(sendData);
+
+  // const handleCheckboxChange = () => {
+  //   setSendData({
+  //     ...sendData,
+  //     role: sendData.role === "customer" ? "staff" : "customer",
+  //   });
+  // };
 
   const submitToRegister = async (e) => {
     e.preventDefault();
@@ -120,6 +128,21 @@ const Register = () => {
             />
           </div>
           <br />
+          <div className="form">
+            <label htmlFor="choose">Register as Staff</label>
+            <br />
+            <input
+              type="checkbox"
+              name="role"
+              checked={sendData.role === "staff"}
+              onChange={() =>
+                setSendData({
+                  ...sendData,
+                  role: sendData.role === "customer" ? "staff" : "customer",
+                })
+              }
+            />
+          </div>
           <div className="form">
             <button onClick={submitToRegister}>Register</button>
           </div>

@@ -56,11 +56,13 @@ const Nav = () => {
                   Home
                 </NavLink>
               </div>
-              <div className="tab">
-                <NavLink to={"/staff"} className={"tabNavLink"}>
-                  Staff
-                </NavLink>
-              </div>
+              {userData && userData.getData.role === "staff" && (
+                <div className="tab">
+                  <NavLink to={"/staff"} className={"tabNavLink"}>
+                    Staff
+                  </NavLink>
+                </div>
+              )}
               <div className="tab">
                 <NavLink to={"/"} className={"tabNavLink"}>
                   Login

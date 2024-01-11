@@ -13,10 +13,11 @@ router.post("/register", async (req, res) => {
                               name,
                               email,
                               password,
-                              cpassword
+                              cpassword,
+                              role
                     } = req.body;
 
-                    if (!name || !email || !password || !cpassword) {
+                    if (!name || !email || !password || !cpassword || !role) {
                               res.status(400).json({
                                         error: "All fields must be filled"
                               })
@@ -37,7 +38,8 @@ router.post("/register", async (req, res) => {
                                                   name,
                                                   email,
                                                   password,
-                                                  cpassword
+                                                  cpassword,
+                                                  role
                                         });
 
                                         const updatedUser = await newForm.save();
@@ -227,6 +229,61 @@ router.delete("/deleteFood", authentication, async (req, res) => {
                     })
           }
 })
+
+
+router.put("/updateFood", authentication, async (req, res) => {
+          try {
+                    const {
+                              addFoodId,
+                              newFoodName,
+                              newFoodPrice,
+                              newDescription
+                    } = req.body;
+
+                    if (!addFoodId || !newFoodName || !newFoodPrice || !newDescription) {
+                              res.status(400).json({
+                                        msg: "Please fill all details",
+                              });
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(400).json({
+                                                  msg: "Invalid User!",
+                                        });
+                              } else {
+                                        const foundFoodIndex = user.addFood.findIndex(
+                                                  (addFood) => addFood._id.toString() === addFoodId
+                                        );
+
+                                        if (foundFoodIndex === -1) {
+                                                  res.status(400).json({
+                                                            msg: "This food is not exist in your menu list!",
+                                                  });
+                                        } else {
+                                                  // Update the fields of the found food item
+                                                  user.addFood[foundFoodIndex].fname = newFoodName;
+                                                  user.addFood[foundFoodIndex].fprice = newFoodPrice;
+                                                  user.addFood[foundFoodIndex].description = newDescription;
+
+                                                  const updatedUser = await user.save();
+
+                                                  res.status(201).json({
+                                                            msg: "Food details updated successfully",
+                                                            status: 204,
+                                                            data: updatedUser,
+                                                  });
+                                        }
+                              }
+                    }
+          } catch (error) {
+                    console.error(error);
+                    res.status(400).json({
+                              msg: "Not update",
+                    });
+          }
+});
+
 
 
 
