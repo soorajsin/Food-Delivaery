@@ -1,0 +1,22 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.home .oderContainer {
+          margin: auto;
+          width: 1200px;
+          padding: 30px;
+          margin-top: 30px;
+}
+
+.home .oderContainer .Booked button {
+          width: 200px;
+          height: 40px;
+          border-radius: 10px;
+          border: none;
+          background-color: #1976d2;
+          color: #fff;
+          font-size: 30px;
+          cursor: pointer;
+}

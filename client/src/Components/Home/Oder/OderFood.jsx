@@ -1,9 +1,17 @@
 import React from "react";
 import { useContext } from "react";
 import { contextNavigate } from "../../Context/ContextProvider";
+import "./OderFood.css";
+import { useNavigate } from "react-router-dom";
 
 const OderFood = () => {
+  const history = useNavigate();
   const { userData } = useContext(contextNavigate);
+
+  const bookedoder = () => {
+    history("/bookedFood");
+  };
+
   return (
     <>
       <div className="home">
@@ -18,7 +26,12 @@ const OderFood = () => {
                 </div>
               ))
             : ""}
-            
+        </div>
+        <div className="oderContainer">
+          <div className="Booked">
+            <button onClick={bookedoder}>Food Oder</button>
+          </div>
+          <div className="showoder"></div>
         </div>
       </div>
     </>

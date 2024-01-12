@@ -8,6 +8,7 @@ import Homepage from "./Components/Home/Homepage";
 import FoodAdd from "./Components/Staff/ADD/FoodAdd";
 import FoodUpdate from "./Components/Staff/Update/FoodUpdate";
 import OderFood from "./Components/Home/Oder/OderFood";
+import BookingFood from "./Components/Home/Oder/Booked/BookingFood";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/addFood" element={<FoodAdd />} />
           <Route path="/updateFood" element={<FoodUpdate />} />
           <Route path="/oderFood" element={<OderFood />} />
+          <Route path="/bookedFood" element={<BookingFood />} />
         </Routes>
       </BrowserRouter>
     </>
