@@ -46,6 +46,12 @@ const userSchema = new mongoose.Schema({
                     fprice: String,
                     fimg: String,
                     description: String
+          }],
+
+          userAddress: [{
+                    bname: String,
+                    bmobile: Number,
+                    baddress: String
           }]
 })
 

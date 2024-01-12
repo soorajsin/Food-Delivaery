@@ -1,62 +1,10 @@
-import React, { useState } from "react";
-import "./BookingFood.css";
-import { NavLink, useNavigate } from "react-router-dom";
-import apiURL from "../../../config";
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-const BookingFood = () => {
-  const history = useNavigate();
-  const api = apiURL.url;
-  const [sendData, setSendData] = useState({
-    bname: "",
-    bmobile: "",
-    baddress: "",
-  });
-
-  const changeData = (e) => {
-    setSendData({ ...sendData, [e.target.name]: e.target.value });
-  };
-  console.log(sendData);
-
-  const nextPageoder = async (e) => {
-    e.preventDefault();
-
-    const { bname, bmobile, baddress } = sendData;
-
-    if (bname === "") {
-      alert("Please Enter Name");
-    } else if (bmobile === "") {
-      alert("please enter mobile number");
-    } else if (baddress === "") {
-      alert("Please Enter Address");
-    } else {
-      console.log("address");
-
-      const token = await localStorage.getItem("userDataToken");
-
-      const data = await fetch(`${api}/userAddress`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify(sendData),
-      });
-
-      const res = await data.json();
-      // console.log(res);
-
-      if (res.status === 208) {
-        console.log(res);
-        history("/pay");
-      } else {
-        alert("Failed");
-      }
-    }
-  };
-
+const PayOption = () => {
   return (
     <>
-      <div className="booking">
+          <div className="booking">
         <div className="containerBooking">
           <div className="form">
             <h1>Welcome to Food Order</h1>
@@ -102,7 +50,7 @@ const BookingFood = () => {
           </div>
           <br />
           <div className="form">
-            <button onClick={nextPageoder}>Next</button>
+            <button>Next</button>
           </div>
           <br />
           <div className="form">
@@ -114,7 +62,7 @@ const BookingFood = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default BookingFood;
+export default PayOption

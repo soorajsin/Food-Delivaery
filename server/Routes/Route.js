@@ -334,6 +334,55 @@ router.post("/oderFood", authentication, async (req, res) => {
           }
 })
 
+router.post("/userAddress", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+                    const {
+                              bname,
+                              bmobile,
+                              baddress
+                    } = req.body;
+
+                    if (!bname || !bmobile || !baddress) {
+                              res.status(400).json({
+                                        msg: "please provide all fields"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(400).json({
+                                                  msg: "Invalid User!"
+                                        })
+                              } else {
+                                        // console.log(user);
+
+
+                                        user.userAddress = [
+                                                  ...user.userAddress,
+                                                  {
+                                                            bname: bname,
+                                                            bmobile: bmobile,
+                                                            baddress: baddress
+                                                  },
+                                        ];
+
+                                        const updatedUser = await user.save();
+
+                                        res.status(201).json({
+                                                  status: 208,
+                                                  msg: "address added",
+                                                  data: updatedUser
+                                        })
+                              }
+                    }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "Failed to user address"
+                    })
+          }
+})
+
 
 
 
