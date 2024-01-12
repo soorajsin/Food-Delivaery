@@ -32,13 +32,7 @@ const OderFood = () => {
             <button onClick={bookedoder}>Order Food</button>
           </div>
           <div className="showoder">
-            {/* <div className="show-address">
-              {userData.getData.userAddress.map((userAddress, index) => (
-                <div key={index} className="show-addre">
-                  <h2>{userAddress.bname}</h2>
-                </div>
-              ))}
-            </div> */}
+            <div className="show-address"></div>
           </div>
         </div>
       </div>
