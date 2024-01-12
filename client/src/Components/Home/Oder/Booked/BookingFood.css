@@ -1,0 +1,76 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.booking {
+          margin: 100px auto;
+          width: 1200px;
+}
+
+.booking .containerBooking {
+          margin: auto;
+          width: 600px;
+          background-color: #fff;
+          transition: 0.3s ease;
+          padding: 30px;
+          border-radius: 10px;
+}
+
+.booking .containerBooking:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+.booking .containerBooking .form {
+          margin-left: 60px;
+          margin-bottom: 20px;
+}
+
+.booking .containerBooking .form h1 {
+          word-spacing: 26px;
+}
+
+.booking .containerBooking .form h1:hover {
+          color: rgb(175, 83, 83);
+}
+
+.booking .containerBooking .form label {
+          font-size: 30px;
+}
+
+.booking .containerBooking .form input {
+          font-size: 30px;
+          width: 430px;
+          height: 40px;
+          padding-left: 10px;
+          border-top: none;
+          background-color: #f5f5f5;
+          border-radius: 10px;
+}
+
+.booking .containerBooking .form textarea {
+          font-size: 30px;
+          width: 430px;
+          padding-left: 10px;
+          border-top: none;
+          background-color: #f5f5f5;
+          border-radius: 10px;
+}
+
+
+.booking .containerBooking .form button {
+          font-size: 30px;
+          width: 430px;
+          height: 40px;
+          padding-left: 10px;
+          border: none;
+          background-color: #1976d2;
+          border-radius: 10px;
+          cursor: pointer;
+          color: #fff;
+}
+
+.booking .containerBooking .form p {
+          font-size: 20px;
+}
