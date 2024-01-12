@@ -108,7 +108,7 @@ const BookingFood = () => {
           <div className="form">
             <p>
               {" "}
-              <NavLink>Cancel</NavLink>{" "}
+              <NavLink to={"/oderFood"}>Cancel</NavLink>{" "}
             </p>
           </div>
         </div>
