@@ -69,6 +69,11 @@ const Nav = () => {
                 </NavLink>
               </div>
               <div className="tab">
+                <NavLink to={"/oderFood"} className={"tabNavLink"}>
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </NavLink>
+              </div>
+              <div className="tab">
                 <NavLink className={"tabNavLink"}>
                   <Avatar className="avatarIcon">
                     {userData

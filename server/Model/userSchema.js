@@ -39,6 +39,13 @@ const userSchema = new mongoose.Schema({
                     fprice: String,
                     fimg: String,
                     description: String
+          }],
+
+          oderFood: [{
+                    fname: String,
+                    fprice: String,
+                    fimg: String,
+                    description: String
           }]
 })
 
