@@ -10,13 +10,65 @@
           margin-top: 30px;
 }
 
-.home .oderContainer .Booked button {
-          width: 200px;
-          height: 40px;
-          border-radius: 10px;
+.home .oderContainer .show {
+          width: 1200px;
+          margin: auto;
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 20px;
+}
+
+.home .homeContainer .show-data .buy button {
+          margin-left: 10px;
+          margin-bottom: 10px;
+          font-size: 20px;
+          width: 70px;
+          border-radius: 5px;
           border: none;
           background-color: #1976d2;
           color: #fff;
-          font-size: 30px;
           cursor: pointer;
+}
+
+.home .oderContainer .show2 .showBuy {
+          width: 300px;
+          border-radius: 10px;
+          background-color: #eec6c6;
+          margin-right: 50px;
+          margin-bottom: 50px;
+}
+
+.home .oderContainer .show2 .showBuy img {
+          width: 300px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+          height: 200px;
+}
+
+.home .oderContainer .show2 .showBuy h3 {
+          font-size: 20px;
+          margin-left: 10px;
+          margin-bottom: 10px;
+}
+
+.home .oderContainer .show2 .showBuy p {
+          font-size: 20px;
+          margin-left: 10px;
+          margin-bottom: 10px;
+          display: none;
+}
+
+.home .oderContainer .show2 .showBuy:hover p {
+          display: block;
+}
+
+.home .oderContainer .show2 .showBuy .deleteff i {
+          font-size: 20px;
+          margin-left: 10px;
+          margin-bottom: 10px;
+          display: none;
+}
+
+.home .oderContainer .show2 .showBuy:hover .deleteff i {
+          display: block;
 }

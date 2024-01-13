@@ -52,7 +52,15 @@ const userSchema = new mongoose.Schema({
                     bname: String,
                     bmobile: Number,
                     baddress: String
+          }],
+
+          buyFood: [{
+                    addFoodId: String,
+                    name: String,
+                    mobile: String,
+                    address: String
           }]
+
 })
 
 

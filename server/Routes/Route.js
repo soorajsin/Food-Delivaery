@@ -384,6 +384,115 @@ router.post("/userAddress", authentication, async (req, res) => {
 })
 
 
+router.post("/buyFood", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+                    const {
+                              addFoodId,
+                              name,
+                              mobile,
+                              address
+                    } = req.body;
+
+                    if (!addFoodId || !name || !mobile || !address) {
+                              res.status(400).json({
+                                        msg: "filled all place"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(400).json({
+                                                  msg: "user not found"
+                                        })
+                              } else {
+                                        // console.log(user);
+                                        const entryField = user.addFood.find((addFood) => addFood._id.toString() === addFoodId);
+
+                                        if (!entryField) {
+                                                  res.status(400).json({
+                                                            msg: "invalied product"
+                                                  })
+                                        } else {
+                                                  // console.log(entryField);
+
+                                                  const purchageFoodDetails = {
+                                                            addFoodId: entryField._id,
+                                                            name,
+                                                            mobile,
+                                                            address
+                                                  }
+
+                                                  user.buyFood.push(purchageFoodDetails);
+
+                                                  const updatedUser = await user.save();
+                                                  // console.log(updatedUser);
+
+                                                  res.status(201).json({
+                                                            msg: "buy product",
+                                                            status: 209,
+                                                            data: updatedUser
+                                                  })
+
+                                        }
+                              }
+                    }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "Failed to buy food"
+                    })
+          }
+})
+
+
+router.delete("/buyFooddelete", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+
+                    const {
+                              buyFoodId
+                    } = req.body;
+
+                    if (!buyFoodId) {
+                              res.status(400).json({
+                                        msg: "Please provide the id of the item you want to delete."
+                              })
+                    } else {
+                              const user = req.getData;
+                              if (!user) {
+                                        return res.status(500).send('Server Error')
+                              } else {
+                                        // console.log(user);
+
+                                        const entryField = user.buyFood.find((buyFood) => buyFood._id.toString() === buyFoodId);
+
+                                        if (!entryField) {
+                                                  res.status(400).json({
+                                                            entryField: 'No such field exist in your profile.'
+                                                  })
+                                        } else {
+                                                  // console.log(entryField);
+
+                                                  user.buyFood = user.buyFood.filter((buyFood) => buyFood._id.toString() !== buyFoodId);
+
+                                                  const updatedUser = await user.save();
+
+                                                  res.status(201).json({
+                                                            status: 202,
+                                                            msg: "food delete",
+                                                            data: updatedUser
+                                                  })
+                                        }
+                              }
+                    }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "delete failed"
+                    })
+          }
+})
+
+
 
 
 
