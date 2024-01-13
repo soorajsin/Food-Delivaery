@@ -47,11 +47,11 @@ const OderFood = () => {
 
   return (
     <>
-      <div className="home">
-        <div className="homeContainer">
+      <div className="home2">
+        <div className="homeContainer2">
           {userData
             ? userData.getData.addFood.map((addFood, index) => (
-                <div key={index} className="show-data">
+                <div key={index} className="show-data2">
                   <img src={addFood.fimg} alt="img" />
                   <h3>{addFood.fname}</h3>
                   <h4>{addFood.fprice} Rs</h4>
@@ -67,7 +67,7 @@ const OderFood = () => {
         </div>
         <div className="oderContainer">
           <h1>Your Order List</h1>
-          <div className="show2">
+          <div className="oderShow">
             {userData
               ? userData.getData.buyFood.map((buyFood, index) => {
                   const matchedFood = userData.getData.addFood.find(

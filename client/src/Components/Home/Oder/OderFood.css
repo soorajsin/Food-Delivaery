@@ -3,22 +3,58 @@
           padding: 0;
 }
 
-.home .oderContainer {
-          margin: auto;
+.home2 {
+          margin: 100px auto;
           width: 1200px;
-          padding: 30px;
-          margin-top: 30px;
 }
 
-.home .oderContainer .show {
-          width: 1200px;
+.home2 .homeContainer2 {
           margin: auto;
+          width: 1200px;
           display: flex;
           flex-wrap: wrap;
-          margin-top: 20px;
 }
 
-.home .homeContainer .show-data .buy button {
+.home2 .homeContainer2 .show-data2 {
+          width: 300px;
+          border-radius: 10px;
+          background-color: #eec6c6;
+          margin-right: 50px;
+          margin-bottom: 50px;
+}
+
+.home2 .homeContainer2 .show-data2 img {
+          width: 300px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+          height: 200px;
+}
+
+.home2 .homeContainer2 .show-data2 h3 {
+          margin-bottom: 30px;
+          margin-left: 10px;
+          font-size: 25px;
+          cursor: pointer;
+}
+
+.home2 .homeContainer2 .show-data2 h4 {
+          margin-bottom: 30px;
+          margin-left: 10px;
+          font-size: 20px;
+          cursor: pointer;
+}
+
+.home2 .homeContainer2 .show-data2 p {
+          font-size: 20px;
+          cursor: pointer;
+          padding-bottom: 20px;
+          margin-left: 10px;
+          display: none;
+          cursor: pointer;
+}
+
+
+.home2 .homeContainer2 .show-data2 .buy button {
           margin-left: 10px;
           margin-bottom: 10px;
           font-size: 20px;
@@ -30,7 +66,20 @@
           cursor: pointer;
 }
 
-.home .oderContainer .show2 .showBuy {
+.home2 .oderContainer {
+          margin: auto;
+          width: 1200px;
+          padding: 30px;
+          margin-top: 30px;
+}
+
+.home2 .oderContainer .oderShow1 {
+          width: 1200px;
+          margin: auto;
+          display: flex;
+}
+
+.home2 .oderContainer .oderShow .showBuy {
           width: 300px;
           border-radius: 10px;
           background-color: #eec6c6;
@@ -38,37 +87,38 @@
           margin-bottom: 50px;
 }
 
-.home .oderContainer .show2 .showBuy img {
+.home2 .oderContainer .oderShow .showBuy img {
           width: 300px;
           border-radius: 10px;
           margin-bottom: 20px;
           height: 200px;
 }
 
-.home .oderContainer .show2 .showBuy h3 {
+.home2 .oderContainer .oderShow .showBuy h3 {
           font-size: 20px;
           margin-left: 10px;
           margin-bottom: 10px;
 }
 
-.home .oderContainer .show2 .showBuy p {
+.home2 .oderContainer .oderShow .showBuy p {
           font-size: 20px;
           margin-left: 10px;
           margin-bottom: 10px;
           display: none;
+          word-break: break-all;
 }
 
-.home .oderContainer .show2 .showBuy:hover p {
+.home2 .oderContainer .oderShow .showBuy:hover p {
           display: block;
 }
 
-.home .oderContainer .show2 .showBuy .deleteff i {
+.home2 .oderContainer .oderShow .showBuy .deleteff i {
           font-size: 20px;
           margin-left: 10px;
           margin-bottom: 10px;
           display: none;
 }
 
-.home .oderContainer .show2 .showBuy:hover .deleteff i {
+.home2 .oderContainer .oderShow .showBuy:hover .deleteff i {
           display: block;
 }

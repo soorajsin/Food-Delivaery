@@ -65,6 +65,6 @@
           margin-bottom: 20px;
 }
 
-.home .homeContainer:hover p {
+.home .homeContainer .show-data:hover p {
           display: block;
 }
