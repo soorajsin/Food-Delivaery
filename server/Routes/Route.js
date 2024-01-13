@@ -492,6 +492,53 @@ router.delete("/buyFooddelete", authentication, async (req, res) => {
           }
 })
 
+router.delete("/deleteBuyProduct", authentication, async (req, res) => {
+          try {
+                    console.log(req.body);
+
+                    // const {
+                    //           buyFoodId
+                    // } = req.body;
+
+                    // if (!buyFoodId) {
+                    //           res.status(400).json({
+                    //                     msg: "Please provide the id of the item you want to delete."
+                    //           })
+                    // } else {
+                    //           const user = req.getData;
+                    //           if (!user) {
+                    //                     return res.status(500).send('Server Error')
+                    //           } else {
+                    //                     // console.log(user);
+
+                    //                     const entryField = user.buyFood.find((buyFood) => buyFood._id.toString() === buyFoodId);
+
+                    //                     if (!entryField) {
+                    //                               res.status(400).json({
+                    //                                         entryField: 'No such field exist in your profile.'
+                    //                               })
+                    //                     } else {
+                    //                               // console.log(entryField);
+
+                    //                               user.buyFood = user.buyFood.filter((buyFood) => buyFood._id.toString() !== buyFoodId);
+
+                    //                               const updatedUser = await user.save();
+
+                    //                               res.status(201).json({
+                    //                                         status: 202,
+                    //                                         msg: "food delete",
+                    //                                         data: updatedUser
+                    //                               })
+                    //                     }
+                    //           }
+                    // }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "delete failed"
+                    })
+          }
+})
+
 
 
 

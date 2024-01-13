@@ -45,6 +45,27 @@ const OderFood = () => {
     }
   };
 
+  const deleteBuyProduct = async (buyFoodId, index) => {
+    const token = await localStorage.getItem("userDataToken");
+    const data = await fetch(`${api}/deleteBuyProduct`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify({ buyFoodId }),
+    });
+
+    const res = await data.json();
+    console.log(res);
+
+    // if (res.status === 202) {
+    //   console.log(res);
+    // } else {
+    //   alert("Error in deleting the item");
+    // }
+  };
+
   return (
     <>
       <div className="home2">
@@ -60,6 +81,10 @@ const OderFood = () => {
                     <button onClick={() => buyFood(addFood._id, index)}>
                       Buy
                     </button>
+                    <i
+                      onClick={() => deleteBuyProduct(buyFood._id, index)}
+                      class="fa-solid fa-trash"
+                    ></i>
                   </div>
                 </div>
               ))

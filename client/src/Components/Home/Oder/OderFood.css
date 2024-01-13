@@ -13,6 +13,7 @@
           width: 1200px;
           display: flex;
           flex-wrap: wrap;
+          padding: 30px;
 }
 
 .home2 .homeContainer2 .show-data2 {
@@ -53,6 +54,27 @@
           cursor: pointer;
 }
 
+.home2 .homeContainer2 .show-data2 .buy {
+          display: flex;
+          justify-content: space-between;
+}
+
+.home2 .homeContainer2 .show-data2 .buy i {
+          display: none;
+          font-size: 25px;
+          margin-right: 10px;
+          cursor: pointer;
+          transition: 0.3s ease;
+}
+
+.home2 .homeContainer2 .show-data2 .buy i:hover {
+          color: rgb(179, 62, 62);
+}
+
+.home2 .homeContainer2 .show-data2:hover i {
+          display: block;
+}
+
 
 .home2 .homeContainer2 .show-data2 .buy button {
           margin-left: 10px;
@@ -66,6 +88,11 @@
           cursor: pointer;
 }
 
+
+
+
+
+/* second */
 .home2 .oderContainer {
           margin: auto;
           width: 1200px;
