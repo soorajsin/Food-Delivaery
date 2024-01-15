@@ -1,5 +1,5 @@
 const config = {
-          url: "http://localhost:4000"
+          url: "https://food-delivaery-server.vercel.app"
 }
 
 export default config;
