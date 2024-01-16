@@ -1,11 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import "./Nav.css";
 import { AppBar, Avatar, Toolbar } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import apiURL from "../config";
 import { contextNavigate } from "../Context/ContextProvider";
 
 const Nav = () => {
+  const history = useNavigate();
   const { userData, setUserData } = useContext(contextNavigate);
   console.log(userData);
   const api = apiURL.url;
@@ -48,7 +49,15 @@ const Nav = () => {
     });
 
     const res = await data.json();
-    console.log(res);
+    // console.log(res);
+
+    if (res.status === 208) {
+      localStorage.removeItem("userDataToken");
+      history("/");
+      window.location.reload();
+    } else {
+      alert("Not Log Out");
+    }
   };
 
   return (
@@ -129,10 +138,8 @@ const Nav = () => {
                           Login
                         </NavLink>
                       </div>
-                      <div className="avatarTab">
-                        <NavLink onClick={logOut} className={"avatarTabNav"}>
-                          Log Out
-                        </NavLink>
+                      <div className="avatarTab" onClick={logOut}>
+                        <NavLink className={"avatarTabNav"}>Log Out</NavLink>
                       </div>
                     </div>
                   </div>
