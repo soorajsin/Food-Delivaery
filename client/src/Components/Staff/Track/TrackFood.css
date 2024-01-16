@@ -1,0 +1,53 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.trackFood {
+          margin: 100px auto;
+          width: 1200px;
+}
+
+.trackFood .trackContainer {
+          width: 1200px;
+          margin: auto;
+          padding: 20px;
+}
+
+.trackFood .trackContainer h1 {
+          margin-bottom: 20px;
+}
+
+.trackFood .trackContainer .trackShow {
+          display: flex;
+          flex-wrap: wrap;
+}
+
+.trackFood .trackContainer .trackShow .showBuy {
+          width: 300px;
+          border-radius: 10px;
+          background-color: #eec6c6;
+          margin-bottom: 50px;
+          margin-right: 50px;
+}
+
+.trackFood .trackContainer .trackShow .showBuy img {
+          width: 300px;
+          border-radius: 10px;
+          cursor: pointer;
+          height: 200px;
+}
+
+.trackFood .trackContainer .trackShow .showBuy h3 {
+          margin-top: 10px;
+          margin-left: 10px;
+          margin: 10px;
+          font-size: 20px;
+}
+
+.trackFood .trackContainer .trackShow .showBuy p {
+          margin-top: 10px;
+          margin-left: 10px;
+          margin: 10px;
+          font-size: 20px;
+}

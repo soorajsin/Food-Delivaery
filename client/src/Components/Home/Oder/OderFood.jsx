@@ -57,13 +57,13 @@ const OderFood = () => {
     });
 
     const res = await data.json();
-    console.log(res);
+    // console.log(res);
 
-    // if (res.status === 202) {
-    //   console.log(res);
-    // } else {
-    //   alert("Error in deleting the item");
-    // }
+    if (res.status === 202) {
+      console.log(res);
+    } else {
+      alert("Error in deleting the item");
+    }
   };
 
   return (
