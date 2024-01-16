@@ -141,6 +141,29 @@ router.get("/validator", authentication, async (req, res) => {
 })
 
 
+
+router.post("/signOut", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+
+                    const user = req.getData;
+
+                    if (!user) {
+                              res.status(400).json({
+                                        error: "Please login first to sign out."
+                              })
+                    } else {
+                              console.log(user);
+                    }
+          } catch (error) {
+                    res.status(400).json({
+                              msg: "Log out failed"
+                    })
+          }
+})
+
+
+
 router.post("/addFood", authentication, async (req, res) => {
           try {
                     // console.log(req.body);

@@ -36,6 +36,21 @@ const Nav = () => {
     navAuth();
   });
 
+  const logOut = async () => {
+    const token = await localStorage.getItem("userDataToken");
+
+    const data = await fetch(`${api}/signOut`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+    });
+
+    const res = await data.json();
+    console.log(res);
+  };
+
   return (
     <>
       <AppBar>
@@ -80,6 +95,47 @@ const Nav = () => {
                       ? userData.getData.email.charAt(0).toUpperCase()
                       : ""}
                   </Avatar>
+                  <div className="avatarManu">
+                    <div className="avatarConainer">
+                      <div className="avatarTab">
+                        <NavLink to={"/home"} className={"avatarTabNav"}>
+                          Home
+                        </NavLink>
+                      </div>
+                      <div className="avatarTab">
+                        <NavLink to={"/oderFood"} className={"avatarTabNav"}>
+                          Booking
+                        </NavLink>
+                      </div>
+                      {userData && userData.getData.role === "staff" && (
+                        <>
+                          <div className="avatarTab">
+                            <NavLink to={"staff"} className={"avatarTabNav"}>
+                              Staff
+                            </NavLink>
+                          </div>
+                          <div className="avatarTab">
+                            <NavLink
+                              to={"/showBooked"}
+                              className={"avatarTabNav"}
+                            >
+                              Show Booked
+                            </NavLink>
+                          </div>
+                        </>
+                      )}
+                      <div className="avatarTab">
+                        <NavLink to={"/"} className={"avatarTabNav"}>
+                          Login
+                        </NavLink>
+                      </div>
+                      <div className="avatarTab">
+                        <NavLink onClick={logOut} className={"avatarTabNav"}>
+                          Log Out
+                        </NavLink>
+                      </div>
+                    </div>
+                  </div>
                 </NavLink>
               </div>
             </div>
