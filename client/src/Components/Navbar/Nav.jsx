@@ -94,17 +94,17 @@ const Nav = () => {
                   Login
                 </NavLink>
               </div>
-              {userData && userData.getData.role === "customer" && (
+  
                 <div className="tab">
                   <NavLink to={"/oderFood"} className={"tabNavLink"}>
                     <i class="fa-solid fa-cart-shopping"></i>
                   </NavLink>
                 </div>
-              )}
+            
               {userData && userData.getData.role === "staff" && (
                 <div className="tab">
                   <NavLink to={"/trackFood"} className={"tabNavLink"}>
-                    <i class="fa-solid fa-cart-shopping"></i>
+                     Track
                   </NavLink>
                 </div>
               )}
