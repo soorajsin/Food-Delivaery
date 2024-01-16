@@ -10,6 +10,7 @@ import FoodUpdate from "./Components/Staff/Update/FoodUpdate";
 import OderFood from "./Components/Home/Oder/OderFood";
 import BookingFood from "./Components/Home/Oder/Booked/BookingFood";
 import PayOption from "./Components/Home/Oder/Booked/Pay/PayOption";
+import TrackFood from "./Components/Staff/Track/TrackFood";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/oderFood" element={<OderFood />} />
           <Route path="/bookedFood" element={<BookingFood />} />
           <Route path="/pay" element={<PayOption />} />
+          <Route path="/trackFood" element={<TrackFood />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -81,22 +81,33 @@ const Nav = () => {
                 </NavLink>
               </div>
               {userData && userData.getData.role === "staff" && (
-                <div className="tab">
-                  <NavLink to={"/staff"} className={"tabNavLink"}>
-                    Staff
-                  </NavLink>
-                </div>
+                <>
+                  <div className="tab">
+                    <NavLink to={"/staff"} className={"tabNavLink"}>
+                      Staff
+                    </NavLink>
+                  </div>
+                </>
               )}
               <div className="tab">
                 <NavLink to={"/"} className={"tabNavLink"}>
                   Login
                 </NavLink>
               </div>
-              <div className="tab">
-                <NavLink to={"/oderFood"} className={"tabNavLink"}>
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </NavLink>
-              </div>
+              {userData && userData.getData.role === "customer" && (
+                <div className="tab">
+                  <NavLink to={"/oderFood"} className={"tabNavLink"}>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </NavLink>
+                </div>
+              )}
+              {userData && userData.getData.role === "staff" && (
+                <div className="tab">
+                  <NavLink to={"/trackFood"} className={"tabNavLink"}>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </NavLink>
+                </div>
+              )}
               <div className="tab">
                 <NavLink className={"tabNavLink"}>
                   <Avatar className="avatarIcon">
