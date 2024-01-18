@@ -75,6 +75,7 @@ router.post("/login", async (req, res) => {
                               const checkUser = await userdb.findOne({
                                         email
                               });
+                              // console.log(checkUser);
 
                               if (!checkUser) {
                                         res.status(400).json({
@@ -572,6 +573,36 @@ router.delete("/deleteBuyProduct", authentication, async (req, res) => {
                     })
           }
 })
+
+
+
+router.get("/allFood", async (req, res) => {
+          try {
+                    const usersWithAddFood = await userdb.find({
+                              addFood: {
+                                        $exists: true,
+                                        $ne: []
+                              }
+                    });
+
+                    const allFoodData = usersWithAddFood.map(user => ({
+                              _id: user._id,
+                              addFood: user.addFood
+                    }));
+
+                    console.log(allFoodData);
+                    res.status(200).json({
+                              status: 200,
+                              allFood: allFoodData
+                    });
+          } catch (error) {
+                    console.error(error); // Log the error to the console
+                    res.status(500).json({
+                              error: "Internal Server Error"
+                    });
+          }
+});
+
 
 
 
