@@ -10,26 +10,29 @@ const Homepage = () => {
   // const { userData } = useContext(contextNavigate);
   const [addFoodData, setAddFoodData] = useState([]);
 
-  useEffect(() => {
-    const fetchAllData = async () => {
-      try {
-        const data = await fetch(`${api}/allFood`);
-        const res = await data.json();
-        console.log("Sooraj dtaa  " + res);
+  const fetchAllData = async () => {
+    try {
+      const data = await fetch(`${api}/allFood`,{
+        method:"GET"
+      });
+      const res = await data.json();
+      console.log("Sooraj dtaa  " + res);
 
-        if (res.status === 200) {
-          setAddFoodData(res.allFood);
-          console.log("addFoodData:", addFoodData);
-        } else {
-          console.error("Failed to fetch food data");
-        }
-      } catch (error) {
-        console.error("Error fetching food data:", error);
+      if (res.status === 200) {
+        setAddFoodData(res.allFood);
+        console.log("addFoodData:", addFoodData);
+      } else {
+        console.error("Failed to fetch food data");
       }
-    };
+    } catch (error) {
+      console.error("Error fetching food data:", error);
+    }
+  };
+
+  useEffect(() => {
 
     fetchAllData();
-  }, [api, addFoodData]); // Include addFoodData in the dependency array
+  }, ); // Include addFoodData in the dependency array
 
   const orderFood = async (addFoodId, index) => {
     const token = await localStorage.getItem("userDataToken");
